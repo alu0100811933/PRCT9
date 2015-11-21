@@ -19,6 +19,7 @@ module Lista
              ##yield be_kind_of.Nodo[0]
              yield @nodo_ini[0]
              yield @nodo_act[0]
+             
          end
         
         
