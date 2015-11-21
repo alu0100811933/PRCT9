@@ -116,7 +116,7 @@ module Libro
     
     def <=>(other)
       @nombrerevista<=>other.nombrerevista
- #  super()
+      super()
     end
  end
   

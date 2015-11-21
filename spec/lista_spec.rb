@@ -45,7 +45,7 @@ describe Lista do
 
     L = Lista::Lista.new()
 
-    it "Nuestros objetos son iguales" do
+    it "# Nuestros objetos son iguales" do
         
         L.insert(LIBRO1)
         L.insert(LIBRO1)
@@ -61,13 +61,13 @@ describe Lista do
 
 
 
-it "# Jerarquía y herencia de la clase libro" do
+it "# Igualación y diferencia de Revistas" do
     
     r1=Libro::Revista.new("NINTENDO")
     r1.setT("Título 1")
     
     r2=Libro::Revista.new("NINTENDO")
-    r2.setT("Título 2")
+    r2.setT("Título 1")
     
     
     p1=Libro::Periodico.new("Col. 6")
@@ -76,10 +76,29 @@ it "# Jerarquía y herencia de la clase libro" do
     d1=Libro::Documento.new("www.google.es")
     d1.setT("Documento 1")
 
-         #  expect(r1==r2).to eq(false) 
+    expect(r1==r2).to eq(true) 
+    
+    
+    r2.setT("Título 2")
+    expect(r1==r2).to eq(false) 
 
 
 end
+
+
+it "Libro más grande que otro" do
+    
+    LIBRO1.setNp(120)
+    
+    expect(LIBRO1).to be >  LIBRO2
+
+    
+    
+end
+
+
+
+
 
 end
     
