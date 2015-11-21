@@ -18,6 +18,7 @@ module Libro
       @n_pag = 0
     end
     #########################################
+  
     
     def setA(a)
       @a=a

@@ -3,7 +3,7 @@ Nodo = Struct.new(:v, :n, :b)
 module Lista
     
     class Lista
-        
+        include Enumerable
         attr_reader :cabeza, :nodo_ini, :nodo_act, :contar, :vacia, :tail
         
         def initialize()
@@ -14,6 +14,13 @@ module Lista
             @vacia = 0
             @tail = nil
         end
+        
+         def each 
+             ##yield be_kind_of.Nodo[0]
+             yield @nodo_ini[0]
+             yield @nodo_act[0]
+         end
+        
         
         def insert(valor)
             @vacia = @vacia + 1

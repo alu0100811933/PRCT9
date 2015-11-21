@@ -99,9 +99,10 @@ it "# Enumerable" do
     L = Lista::Lista.new()
     L.insert(LIBRO1)
     L.insert(LIBRO2)
-
+    
 
       expect(L.max).to eq(LIBRO1)
+      expect(L.min).to eq(LIBRO2)
 
 
 end
