@@ -43,12 +43,9 @@ describe Lista do
       LIBRO2.setNp(100)
 
 
-    L = Lista::Lista.new()
 
     it "# Nuestros objetos son iguales" do
-        
-        L.insert(LIBRO1)
-        L.insert(LIBRO1)
+     
 
 
       #  expect(L.nodo_ini[0]).to eq(L.nodo_act[0])
@@ -86,18 +83,28 @@ it "# Igualación y diferencia de Revistas" do
 end
 
 
-it "Libro más grande que otro" do
+it "# Libro más grande que otro" do
     
     LIBRO1.setNp(120)
     
     expect(LIBRO1).to be >  LIBRO2
+    expect(LIBRO2).to be <  LIBRO1
 
-    
+    #expect(LIBRO1>LIBRO2).to eq(true)
     
 end
 
+it "# Enumerable" do
+
+    L = Lista::Lista.new()
+    L.insert(LIBRO1)
+    L.insert(LIBRO2)
 
 
+      expect(L.max).to eq(LIBRO1)
+
+
+end
 
 
 end
