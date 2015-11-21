@@ -2,8 +2,8 @@ module Libro
 
  
   class Libro
-   
-    attr_reader :a,:t, :s, :e, :ed, :f, :vect
+     include Comparable, Enumerable
+    attr_reader :a,:t, :s, :e, :ed, :f, :vect, :n_pag
     
    
     def initialize()
@@ -15,6 +15,7 @@ module Libro
       @ed = 0
       @f = 0
       @vect = nil
+      @n_pag = 0
     end
     #########################################
     
@@ -44,6 +45,10 @@ module Libro
     
     def setNum(n)
       @vect=n
+    end
+    
+    def setNp(nn)
+      @n_pag=nn
     end
     
     #########################################
@@ -80,9 +85,25 @@ module Libro
         return "#{@t}, #{@a}\n#{@s}\n#{@e}; #{@ed} #{@f}\n#{@vect}"
     end
 
-
+  def <=> (other)
+   
+       return nil unless other.kind_of? Libro
+       
+       @n_pag <=> other.n_pag
+   
+  end
     
-
+    def == (other)
+     
+     if @a==other.a && @t==other.t && @s==other.s && @e==other.e && @ed==other.ed && @f==other.f && @vect==other.vect && @n_pag==other.n_pag
+       return true
+     else
+      return false
+     end  
+      
+    end 
+    
+    
   end
   
  class Revista < Libro
@@ -91,6 +112,11 @@ module Libro
     def initialize(n)
       @nombrerevista=n
       super()
+    end
+    
+    def <=>(other)
+      @nombrerevista<=>other.nombrerevista
+ #  super()
     end
  end
   

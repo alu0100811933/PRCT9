@@ -20,6 +20,7 @@ describe Lista do
       LIBRO1.setEdc(Edc0)
       LIBRO1.setFecha(fch0)
       LIBRO1.setNum(num0)
+      LIBRO1.setNp(100)
       
       
       LIBRO2 = Libro::Libro.new()
@@ -39,6 +40,7 @@ describe Lista do
       LIBRO2.setEdc(Edc1)
       LIBRO2.setFecha(fch1)
       LIBRO2.setNum(num1)
+      LIBRO2.setNp(100)
 
 
     L = Lista::Lista.new()
@@ -52,14 +54,32 @@ describe Lista do
       #  expect(L.nodo_ini[0]).to eq(L.nodo_act[0])
         
         expect(LIBRO1).to eq(LIBRO2)
-        
+       
+       
+       #expect(LIBRO1==LIBRO2).to eq(true) 
     end
 
 
 
+it "# Jerarquía y herencia de la clase libro" do
+    
+    r1=Libro::Revista.new("NINTENDO")
+    r1.setT("Título 1")
+    
+    r2=Libro::Revista.new("NINTENDO")
+    r2.setT("Título 2")
+    
+    
+    p1=Libro::Periodico.new("Col. 6")
+    p1.setT("Periodico 1")
+    
+    d1=Libro::Documento.new("www.google.es")
+    d1.setT("Documento 1")
+
+         #  expect(r1==r2).to eq(false) 
 
 
-
+end
 
 end
     
