@@ -120,6 +120,29 @@ describe "# ENUMERABLE" do
       expect(L.max).to eq(LIBRO3)
       expect(L.min).to eq(LIBRO4)
   end
+  
+  it "# Comprobrando el metodo any?" do
+         expect(L.any?{|i| i == LIBRO5}).to eq(true)
+     end
+     
+     it "# Comprobrando el metodo all?" do
+        LIBRO_P = Libro::Libro.new()
+         expect(L.all?{|i| i == LIBRO_P}).to eq(false)
+     end 
+     
+      it "# Comprobrando el metodo count" do
+      expect(L.count).to eq(6)
+      end
+    
+    it "# Comprobrando el metodo detect" do
+      LIBRO_MAL = Libro::Libro.new()
+      expect(L.detect {|i| i == LIBRO1}).to eq(LIBRO1)
+      expect(L.find {|i| i == LIBRO_MAL}).to eq(nil)
+    end
+    
+    it "# Comprobrando sort" do
+      expect(L.sort).to eq([LIBRO4, LIBRO5, LIBRO6, LIBRO2, LIBRO1, LIBRO3])
+    end
 
 
 end
