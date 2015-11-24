@@ -110,6 +110,7 @@ module Libro
  class Revista < Libro
     
     attr_reader :nombrerevista
+    
     def initialize(n)
       @nombrerevista=n
       super()
@@ -119,7 +120,17 @@ module Libro
       @nombrerevista<=>other.nombrerevista
       super()
     end
- end
+    
+    def == (other)
+      if  @nombrerevista == other.nombrerevista
+        super
+        #return true
+      else
+        return false
+      end
+    end
+    
+  end
   
   class Periodico < Libro
     attr_reader :articulo
@@ -127,6 +138,21 @@ module Libro
       @articulo=columna
       super()
     end
+    
+    def <=>(other)
+      @articulo<=>other.articulo
+      super()
+    end
+    
+    def == (other)
+      if  @articulo == other.articulo
+        super
+        #return true
+      else
+        return false
+      end
+    end
+    
   end
   
   class Documento < Libro
@@ -135,6 +161,21 @@ module Libro
       @url=dir
       super()
     end
+    
+    def <=>(other)
+      @url<=>other.url
+      super()
+    end
+    
+    def == (other)
+      if  @url == other.url
+        super
+        #return true
+      else
+        return false
+      end
+    end
+    
   end
   
 end
