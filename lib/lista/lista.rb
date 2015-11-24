@@ -16,10 +16,12 @@ module Lista
         end
         
          def each 
-             ##yield be_kind_of.Nodo[0]
-             yield @nodo_ini[0]
+             aux = @nodo_ini
+                 while aux[1]!=nil do
+                     yield aux[0]
+                     aux = aux[1]
+                 end
              yield @nodo_act[0]
-             
          end
         
         

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'lista'
 
-describe Lista do
+describe "# COMPARABLE" do
 
   LIBRO1 = Libro::Libro.new()
 
@@ -41,6 +41,18 @@ describe Lista do
       LIBRO2.setFecha(fch1)
       LIBRO2.setNum(num1)
       LIBRO2.setNp(100)
+
+      LIBRO3 = Libro::Libro.new()
+       LIBRO3.setNp(500)
+       
+      LIBRO4 = Libro::Libro.new()
+       LIBRO4.setNp(3)
+       
+      LIBRO5 = Libro::Libro.new()
+       LIBRO5.setNp(10)
+       
+      LIBRO6 = Libro::Libro.new()
+       LIBRO6.setNp(21)
 
 
 
@@ -94,18 +106,20 @@ it "# Libro más grande que otro" do
     
 end
 
-it "# Enumerable" do
+end
 
-    L = Lista::Lista.new()
+describe "# ENUMERABLE" do
+  L = Lista::Lista.new()
     L.insert(LIBRO1)
     L.insert(LIBRO2)
-    
-
-      expect(L.max).to eq(LIBRO1)
-      expect(L.min).to eq(LIBRO2)
-
-
-end
+    L.insert(LIBRO5)
+    L.insert(LIBRO4)
+    L.insert(LIBRO3)
+    L.insert(LIBRO6)
+  it "# Max y min lista" do
+      expect(L.max).to eq(LIBRO3)
+      expect(L.min).to eq(LIBRO4)
+  end
 
 
 end
